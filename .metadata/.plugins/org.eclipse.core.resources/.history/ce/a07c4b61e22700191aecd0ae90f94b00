@@ -1,0 +1,51 @@
+package br.com.classes;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		long tempoAcumulado = 0;	
+		long hora = 0;
+		long minutos = 0;
+		long segundos =0;
+		
+		hora = (tempoAcumulado % 600000);
+		minutos = (tempoAcumulado % 60000);
+		segundos = (tempoAcumulado % 1000);
+		
+		
+		long segundos2 = (tempoAcumulado / 1000);
+		
+
+		tempoAcumulado = retornaTempoAtividade();
+		System.out.println("Tempo total acumulado em Milli: "+ tempoAcumulado);
+		System.out.println("Tempo total horas: "+ hora);
+		System.out.println("Tempo total minutos: "+ minutos);
+		System.out.println("Tempo total segundos: "+ segundos);
+		System.out.println("FIM");
+		
+		
+		System.out.println(segundos2);
+	}
+
+	
+	
+
+	public static long retornaTempoAtividade(){
+		
+		long horaInicial = 0;
+		long horafinal = 0;
+		long tempoGasto = 0;
+		
+		horaInicial = System.currentTimeMillis();
+		for(int i = 0; i<10000 ; i++){
+			System.out.println("Teste de tempo gasto - exectando loop de número: " + i);
+		}		
+		horafinal = System.currentTimeMillis();
+		
+		tempoGasto = horafinal - horaInicial;
+		return tempoGasto;
+	}
+
+}

@@ -1,0 +1,105 @@
+package br.com.classes;
+
+import java.util.Calendar;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+//		long tempoAcumulado = 0;	
+//		long hora = 0;
+//		long minutos = 0;
+//		long segundos =0;
+//		long segundos2 =0;
+//		
+//		tempoAcumulado = retornaTempoAtividade();
+//		hora = (tempoAcumulado / 600000);
+//		minutos = (tempoAcumulado / 60000);
+//		segundos = (tempoAcumulado / 1000);
+//		
+//		segundos2 = (tempoAcumulado / 1000);
+//		System.out.println("Tempo total acumulado em Milli: "+ tempoAcumulado);
+//		System.out.println("Tempo total horas: "+ hora);
+//		System.out.println("Tempo total minutos: "+ minutos);
+//		System.out.println("Tempo total segundos: "+ segundos);
+//		System.out.println("FIM");
+//		
+//		
+//		System.out.println(segundos2);
+//		
+//		System.out.println("=====================================================");
+//		
+//		mostraHoraAtual();
+		
+		JFrame frame = new JFrame();
+		frame.setVisible(true);
+		frame.setTitle("Coleta de Dados");
+		frame.setSize(300, 400);
+		JOptionPane.showMessageDialog(null , "Teste");
+		
+		
+	}
+
+	
+	
+
+	public static long retornaTempoAtividade(){
+		
+		long horaInicial = 0;
+		long horafinal = 0;
+		long tempoGasto = 0;
+		
+		horaInicial = System.currentTimeMillis();
+		for(int i = 0; i<1000000 ; i++){
+			System.out.println("Teste de tempo gasto - executando loop de número: " + i);
+		}		
+		horafinal = System.currentTimeMillis();
+		horafinal = 7200000;
+		
+		long hora =0;
+		long minuto =0;
+		long segundo =0;
+		
+		segundo = (horafinal/1000);
+		minuto = (segundo/60);
+		segundo = segundo %60;
+		hora = (minuto/60);
+		minuto = minuto %60;
+		
+		String tempoEmTexto = String.format("%02d:%02d:%02d", hora, minuto, segundo );
+		
+
+		System.out.println(hora);
+		System.out.println(minuto);
+		System.out.println(segundo);
+		System.out.println(tempoEmTexto);
+		
+		
+		tempoGasto = horafinal - horaInicial;
+		return tempoGasto;
+	}
+	
+	
+	public static void mostraHoraAtual (){
+		Calendar c = Calendar.getInstance(); //retorna um calendar com a hora do sistema
+		c.get(Calendar.HOUR_OF_DAY); //retorna a hora, com valor de 0 a 23
+		c.get(Calendar.MINUTE);//retorna os minutos
+		c.get(Calendar.SECOND);//retorna os segundos
+		c.get(Calendar.MILLISECOND);//retorna os milisegundos
+		
+		
+		System.out.println(c.get(Calendar.HOUR_OF_DAY));
+		System.out.println(c.get(Calendar.MINUTE));
+		System.out.println(c.get(Calendar.SECOND));
+		System.out.println(c.get(Calendar.MILLISECOND));
+		
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++");
+		System.out.println("Hora Atual: " + c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE) + ":" + c.get(Calendar.SECOND));
+	}
+	
+
+}

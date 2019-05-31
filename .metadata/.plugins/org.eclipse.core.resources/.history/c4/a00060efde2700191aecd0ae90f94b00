@@ -1,0 +1,39 @@
+package br.com.classes;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		long tempoAcumulado = 0;
+				
+				
+
+				
+				
+				
+		
+
+	}
+
+
+	public static long retornaTempoAtividade(){
+		
+		long horaInicial = 0;
+		long horafinal = 0;
+		long tempoGasto = 0;
+		
+		
+		
+		
+		
+		
+		
+		
+		return tempogasto;
+		
+	}
+
+
+
+}
